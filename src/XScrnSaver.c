@@ -26,7 +26,7 @@ in this Software without prior written authorization from the X Consortium.
  *
  * Author:  Keith Packard, MIT X Consortium
  */
-/* $XFree86$ */
+/* $XFree86: xc/lib/Xss/XScrnSaver.c,v 3.2 2002/10/16 00:37:32 dawes Exp $ */
 
 #define NEED_EVENTS
 #define NEED_REPLIES
