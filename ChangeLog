@@ -1,3 +1,9 @@
+2005-06-23  Theo van Klaveren  <t.vanklaveren@student.utwente.nl>
+
+	Fix make distcheck.
+
+	* man/Makefile.am: Fix typo (man3_MANS -> man_MANS).
+
 2005-06-21  Alexander Gottwald  <ago at freedesktop dot org>
 
 	* configure.ac
