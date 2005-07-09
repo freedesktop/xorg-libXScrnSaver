@@ -1,3 +1,10 @@
+2005-07-08  Keith Packard  <keithp@keithp.com>
+
+	* .cvsignore:
+	* man/.cvsignore:
+	* src/.cvsignore:
+	Add .cvsignore files
+
 2005-06-23  Theo van Klaveren  <t.vanklaveren@student.utwente.nl>
 
 	Fix make distcheck.
