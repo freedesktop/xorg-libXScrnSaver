@@ -6,6 +6,6 @@ includedir=@includedir@
 Name: XScrnSaver
 Description: The XScrnSaver Library
 Version: @PACKAGE_VERSION@
-Cflags: -I${includedir} @DEP_CFLAGS@
-Libs: -L${libdir} -lXScrnSaver @DEP_LIBS@
+Cflags: -I${includedir} @XSCRNSAVER_CFLAGS@
+Libs: -L${libdir} -lXScrnSaver @XSCRNSAVER_LIBS@
 
