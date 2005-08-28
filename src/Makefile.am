@@ -1,11 +1,11 @@
 AM_CFLAGS = $(XSCRNSAVER_CFLAGS)
-lib_LTLIBRARIES = libXScrnSaver.la
+lib_LTLIBRARIES = libXss.la
 
-libXScrnSaver_la_SOURCES = \
+libXss_la_SOURCES = \
          XScrnSaver.c
 
-libXScrnSaver_la_LIBADD = $(XSCRNSAVER_LIBS)
+libXss_la_LIBADD = $(XSCRNSAVER_LIBS)
 
-libXScrnSaver_la_LDFLAGS = -version-info 7:0:0 -no-undefined
+libXss_la_LDFLAGS = -version-info 1:0:0 -no-undefined
 
 

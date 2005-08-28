@@ -7,5 +7,4 @@ Name: XScrnSaver
 Description: The XScrnSaver Library
 Version: @PACKAGE_VERSION@
 Cflags: -I${includedir} @XSCRNSAVER_CFLAGS@
-Libs: -L${libdir} -lXScrnSaver @XSCRNSAVER_LIBS@
-
+Libs: -L${libdir} -lXss @XSCRNSAVER_LIBS@
