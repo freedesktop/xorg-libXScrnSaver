@@ -29,7 +29,7 @@ libmandir = $(mandir)/man$(LIB_MAN_SUFFIX)
 
 libman_SOURCES = Xss.man
 
-BUILT_SOURCES = .shadows.DONE
+BUILT_SOURCES = shadows.DONE
 
 EXTRA_DIST = $(libman_SOURCES)
 
@@ -68,7 +68,7 @@ Xss_shadows = 				\
 	XScreenSaverUnregister		\
 	XScreenSaverGetRegistered
 
-.shadows.DONE:
+shadows.DONE:
 	-rm -f $(Xss_shadows:=.$(LIB_MAN_SUFFIX))
 	(for i in $(Xss_shadows:=.$(LIB_MAN_SUFFIX)) ; do \
 	 echo .so man$(LIB_MAN_SUFFIX)/Xss.$(LIB_MAN_SUFFIX) > $$i; \
