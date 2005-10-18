@@ -35,8 +35,8 @@ EXTRA_DIST = $(libman_SOURCES)
 
 CLEANFILES = $(libman_DATA) $(BUILT_SOURCES)
 
-libman_DATA = $(libman_SOURCES:man=$(LIB_MAN_SUFFIX)) \
-	      $(Xss_shadows:=.$(LIB_MAN_SUFFIX))
+libman_DATA = $(libman_SOURCES:man=@LIB_MAN_SUFFIX@) \
+	      $(Xss_shadows:=.@LIB_MAN_SUFFIX@)
 
 SED = sed
 
@@ -69,7 +69,7 @@ Xss_shadows = 				\
 	XScreenSaverGetRegistered
 
 shadows.DONE:
-	-rm -f $(Xss_shadows:=.$(LIB_MAN_SUFFIX))
-	(for i in $(Xss_shadows:=.$(LIB_MAN_SUFFIX)) ; do \
+	-rm -f $(Xss_shadows:=.@LIB_MAN_SUFFIX@)
+	(for i in $(Xss_shadows:=.@LIB_MAN_SUFFIX@) ; do \
 	 echo .so man$(LIB_MAN_SUFFIX)/Xss.$(LIB_MAN_SUFFIX) > $$i; \
 	 done)
