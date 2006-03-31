@@ -68,7 +68,8 @@ Xss_shadows = 				\
 	XScreenSaverUnsetAttributes	\
 	XScreenSaverRegister		\
 	XScreenSaverUnregister		\
-	XScreenSaverGetRegistered
+	XScreenSaverGetRegistered	\
+	XScreenSaverSuspend
 
 shadows.DONE:
 	-rm -f $(Xss_shadows:=.@LIB_MAN_SUFFIX@)
