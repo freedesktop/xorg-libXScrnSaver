@@ -26,3 +26,9 @@ pkgconfig_DATA = xscrnsaver.pc
 
 EXTRA_DIST = xscrnsaver.pc.in autogen.sh
 
+.PHONY: ChangeLog
+
+ChangeLog:
+	GIT_DIR=${srcdir}/.git git-log --name-only > ChangeLog
+
+dist-hook: ChangeLog
