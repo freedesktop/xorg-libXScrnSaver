@@ -29,6 +29,10 @@ AM_MAINTAINER_MODE
 
 AM_CONFIG_HEADER(config.h)
 
+# Require xorg-macros version 1.1.0 or newer for XORG_WITH_LINT macro
+m4_ifndef([XORG_MACROS_VERSION], [AC_FATAL([must install xorg-macros 1.1 or later before running autoconf/autogen])])
+XORG_MACROS_VERSION(1.1)
+
 # Check for progs
 AC_PROG_CC
 AC_PROG_LIBTOOL
@@ -38,6 +42,10 @@ PKG_CHECK_MODULES(XSCRNSAVER, x11 xext xextproto [scrnsaverproto >= 1.1])
 
 AC_SUBST(XSCRNSAVER_CFLAGS)
 AC_SUBST(XSCRNSAVER_LIBS)
+
+dnl Allow checking code with lint, sparse, etc.
+XORG_WITH_LINT
+XORG_LINT_LIBRARY([Xss])
 		  
 XORG_CHECK_MALLOC_ZERO
 XORG_MANPAGE_SECTIONS	
