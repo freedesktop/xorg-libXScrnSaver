@@ -1,4 +1,9 @@
-AM_CFLAGS = $(XSCRNSAVER_CFLAGS) $(MALLOC_ZERO_CFLAGS)
+AM_CFLAGS = -I$(top_srcdir)/include \
+            -I$(top_srcdir)/include/X11 \
+            -I$(top_srcdir)/include/X11/extensions \
+            $(XSCRNSAVER_CFLAGS) \
+            $(MALLOC_ZERO_CFLAGS)
+
 lib_LTLIBRARIES = libXss.la
 
 libXss_la_SOURCES = \
