@@ -1,7 +1,0 @@
-.deps
-.libs
-libXScrnSaver.la
-*.la
-*.lo
-Makefile
-Makefile.in

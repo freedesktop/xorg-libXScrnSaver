@@ -351,7 +351,7 @@ void XScreenSaverSetAttributes (
     req->borderWidth = border_width;
     req->c_class = class;
     req->depth = depth;
-    if (visual == CopyFromParent)
+    if (visual == (Visual *)CopyFromParent)
 	req->visualID = CopyFromParent;
     else
 	req->visualID = visual->visualid;
