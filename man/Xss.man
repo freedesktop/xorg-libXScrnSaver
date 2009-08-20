@@ -42,7 +42,7 @@ typedef struct {
     int kind;                     /\(** ScreenSaver{Blanked,Internal,External} */
     unsigned long til_or_since;   /\(** milliseconds */
     unsigned long idle;           /\(** milliseconds */
-    unsigned long event_mask;     /\(** events */
+    unsigned long eventMask;      /\(** events */
 .br
 } XScreenSaverInfo;
 
