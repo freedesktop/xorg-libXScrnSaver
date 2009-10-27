@@ -24,8 +24,7 @@ SUBDIRS = src man
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = xscrnsaver.pc
 
-EXTRA_DIST = xscrnsaver.pc.in ChangeLog
-MAINTAINERCLEANFILES = ChangeLog
+EXTRA_DIST = xscrnsaver.pc.in 
 
 .PHONY: ChangeLog
 
