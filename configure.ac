@@ -29,14 +29,15 @@ AM_MAINTAINER_MODE
 
 AM_CONFIG_HEADER(config.h)
 
-# Require xorg-macros: XORG_CWARNFLAGS, XORG_CHANGELOG, XORG_WITH_LINT
-m4_ifndef([XORG_MACROS_VERSION], [AC_FATAL([must install xorg-macros 1.2 or later before running autoconf/autogen])])
-XORG_MACROS_VERSION(1.2)
+# Require xorg-macros: XORG_DEFAULT_OPTIONS
+m4_ifndef([XORG_MACROS_VERSION],
+          [m4_fatal([must install xorg-macros 1.3 or later before running autoconf/autogen])])
+XORG_MACROS_VERSION(1.3)
+XORG_DEFAULT_OPTIONS
 
 # Check for progs
 AC_PROG_CC
 AC_PROG_LIBTOOL
-XORG_CWARNFLAGS
 
 # Check for dependencies
 PKG_CHECK_MODULES(XSCRNSAVER, x11 xext xextproto [scrnsaverproto >= 1.2])
@@ -49,9 +50,6 @@ XORG_WITH_LINT
 XORG_LINT_LIBRARY([Xss])
 		  
 XORG_CHECK_MALLOC_ZERO
-XORG_MANPAGE_SECTIONS	
-XORG_RELEASE_VERSION
-XORG_CHANGELOG
 
 AC_OUTPUT([Makefile
 	   src/Makefile
