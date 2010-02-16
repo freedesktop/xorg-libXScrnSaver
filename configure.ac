@@ -41,9 +41,6 @@ AC_PROG_LIBTOOL
 
 # Check for dependencies
 PKG_CHECK_MODULES(XSCRNSAVER, x11 xext xextproto [scrnsaverproto >= 1.2])
-XSCRNSAVER_CFLAGS="$CWARNFLAGS $XSCRNSAVER_CFLAGS"
-AC_SUBST(XSCRNSAVER_CFLAGS)
-AC_SUBST(XSCRNSAVER_LIBS)
 
 dnl Allow checking code with lint, sparse, etc.
 XORG_WITH_LINT
