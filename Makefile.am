@@ -25,7 +25,6 @@ pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = xscrnsaver.pc
 
 MAINTAINERCLEANFILES = ChangeLog INSTALL
-EXTRA_DIST = xscrnsaver.pc.in 
 
 .PHONY: ChangeLog INSTALL
 
