@@ -21,7 +21,7 @@ dnl  PERFORMANCE OF THIS SOFTWARE.
 dnl
 dnl Process this file with autoconf to create configure.
 
-AC_PREREQ([2.57])
+AC_PREREQ([2.60])
 
 AC_INIT(libXScrnSaver, 1.2.0, [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg], libXScrnSaver)
 AM_INIT_AUTOMAKE([foreign dist-bzip2])
