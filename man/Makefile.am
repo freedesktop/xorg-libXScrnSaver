@@ -27,14 +27,14 @@ LIB_MAN_DIR_SUFFIX = $(LIB_MAN_DIR:@mandir@/man%=%)
 
 libman_PRE = Xss.man
 
-BUILT_SOURCES = shadows.DONE
+BUILT_SOURCES = $(Xss_shadowmen)
 
 EXTRA_DIST = $(libman_PRE)
 
 CLEANFILES = $(libman_DATA) $(BUILT_SOURCES)
 
 libman_DATA = $(libman_PRE:man=@LIB_MAN_SUFFIX@) \
-	      $(Xss_shadows:=.@LIB_MAN_SUFFIX@)
+	      $(Xss_shadowmen)
 
 SUFFIXES = .$(LIB_MAN_SUFFIX) .man
 
@@ -57,8 +57,6 @@ Xss_shadows = 				\
 	XScreenSaverGetRegistered	\
 	XScreenSaverSuspend
 
-shadows.DONE:
-	-rm -f $(Xss_shadows:=.@LIB_MAN_SUFFIX@)
-	(for i in $(Xss_shadows:=.@LIB_MAN_SUFFIX@) ; do \
-	 echo .so man$(LIB_MAN_DIR_SUFFIX)/Xss.$(LIB_MAN_SUFFIX) > $$i; \
-	 done)
+Xss_shadowmen = $(Xss_shadows:=.@LIB_MAN_SUFFIX@)
+$(Xss_shadowmen):
+	$(AM_V_GEN)echo ".so man$(LIB_MAN_DIR_SUFFIX)/Xss.$(LIB_MAN_SUFFIX)" > $@
