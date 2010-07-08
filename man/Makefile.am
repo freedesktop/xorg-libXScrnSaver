@@ -36,21 +36,11 @@ CLEANFILES = $(libman_DATA) $(BUILT_SOURCES)
 libman_DATA = $(libman_PRE:man=@LIB_MAN_SUFFIX@) \
 	      $(Xss_shadows:=.@LIB_MAN_SUFFIX@)
 
-SED = sed
-
-# Strings to replace in man pages
-XORGRELSTRING = @PACKAGE_STRING@
-  XORGMANNAME = X Version 11
-
-MAN_SUBSTS = \
-	-e 's/__vendorversion__/"$(XORGRELSTRING)" "$(XORGMANNAME)"/' \
-	-e 's/__miscmansuffix__/$(MISC_MAN_SUFFIX)/g' \
-	-e 's/__libmansuffix__/$(LIB_MAN_SUFFIX)/g' 
-
 SUFFIXES = .$(LIB_MAN_SUFFIX) .man
 
+# String replacements in MAN_SUBSTS now come from xorg-macros.m4 via configure
 .man.$(LIB_MAN_SUFFIX):
-	sed $(MAN_SUBSTS) < $< > $@
+	$(AM_V_GEN)$(SED) $(MAN_SUBSTS) < $< > $@
 
 # Generate man page shadow files (Replaces InstallManPageAliases from Imake)
 
