@@ -23,18 +23,27 @@
 
 libmandir = $(LIB_MAN_DIR)
 
-LIB_MAN_DIR_SUFFIX = $(LIB_MAN_DIR:@mandir@/man%=%)
+libman_PRE =				\
+	Xss.man				\
+	$(Xss_shadows:=.man)
 
-libman_PRE = Xss.man
-
-BUILT_SOURCES = $(Xss_shadowmen)
+Xss_shadows =				\
+	XScreenSaverQueryExtension	\
+	XScreenSaverQueryVersion	\
+	XScreenSaverAllocInfo		\
+	XScreenSaverQueryInfo		\
+	XScreenSaverSelectInput		\
+	XScreenSaverSetAttributes	\
+	XScreenSaverUnsetAttributes	\
+	XScreenSaverRegister		\
+	XScreenSaverUnregister		\
+	XScreenSaverGetRegistered	\
+	XScreenSaverSuspend
 
 EXTRA_DIST = $(libman_PRE)
+CLEANFILES = $(libman_DATA)
 
-CLEANFILES = $(libman_DATA) $(BUILT_SOURCES)
-
-libman_DATA = $(libman_PRE:man=@LIB_MAN_SUFFIX@) \
-	      $(Xss_shadowmen)
+libman_DATA = $(libman_PRE:man=@LIB_MAN_SUFFIX@)
 
 SUFFIXES = .$(LIB_MAN_SUFFIX) .man
 
@@ -42,21 +51,3 @@ SUFFIXES = .$(LIB_MAN_SUFFIX) .man
 .man.$(LIB_MAN_SUFFIX):
 	$(AM_V_GEN)$(SED) $(MAN_SUBSTS) < $< > $@
 
-# Generate man page shadow files (Replaces InstallManPageAliases from Imake)
-
-Xss_shadows = 				\
-	XScreenSaverQueryExtension	\
-	XScreenSaverQueryVersion 	\
-	XScreenSaverAllocInfo 		\
-	XScreenSaverQueryInfo		\
-	XScreenSaverSelectInput		\
-	XScreenSaverSetAttributes 	\
-	XScreenSaverUnsetAttributes	\
-	XScreenSaverRegister		\
-	XScreenSaverUnregister		\
-	XScreenSaverGetRegistered	\
-	XScreenSaverSuspend
-
-Xss_shadowmen = $(Xss_shadows:=.@LIB_MAN_SUFFIX@)
-$(Xss_shadowmen):
-	$(AM_V_GEN)echo ".so man$(LIB_MAN_DIR_SUFFIX)/Xss.$(LIB_MAN_SUFFIX)" > $@
