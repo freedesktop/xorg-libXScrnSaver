@@ -1,5 +1,4 @@
 /*
- * $XConsortium: XScrnSaver.c,v 1.5 94/04/17 20:59:35 rws Exp $
  *
 Copyright (c) 1992  X Consortium
 
@@ -26,7 +25,6 @@ in this Software without prior written authorization from the X Consortium.
  *
  * Author:  Keith Packard, MIT X Consortium
  */
-/* $XFree86: xc/lib/Xss/XScrnSaver.c,v 3.1 2001/10/28 03:32:40 tsi Exp $ */
 
 #include <X11/Xlibint.h>
 #include <X11/Xutil.h>
