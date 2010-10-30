@@ -23,7 +23,9 @@ dnl Process this file with autoconf to create configure.
 
 AC_PREREQ([2.60])
 
-AC_INIT(libXScrnSaver, 1.2.0, [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg], libXScrnSaver)
+AC_INIT([libXScrnSaver], [1.2.1],
+        [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg],
+        [libXScrnSaver])
 AM_INIT_AUTOMAKE([foreign dist-bzip2])
 AM_MAINTAINER_MODE
 
