@@ -47,7 +47,7 @@ PKG_CHECK_MODULES(XSCRNSAVER, x11 xext xextproto [scrnsaverproto >= 1.2])
 # Allow checking code with lint, sparse, etc.
 XORG_WITH_LINT
 XORG_LINT_LIBRARY([Xss])
-		  
+
 AC_CONFIG_FILES([Makefile
 		src/Makefile
 		man/Makefile
